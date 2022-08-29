@@ -1,0 +1,22 @@
+{
+  "name": "weatherwidget",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "scss": "^0.2.4",
+    "vue": "^2.7.7",
+    "vue-geolocation-api": "^0.1.21",
+    "vuedraggable": "^2.24.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "terser": "^5.14.2",
+    "vite": "^3.0.2"
+  }
+}

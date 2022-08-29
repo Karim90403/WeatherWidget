@@ -1,0 +1,269 @@
+@import "./null.scss";
+
+$padding: 1em;
+$icon-size: 4em;
+
+* {
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+}
+
+html {
+    font-family: Roboto, sans-serif;
+}
+
+.weather {
+    width: 100%;
+}
+
+html[data-theme="day"]{
+    background: #53a6cb;
+}
+
+html[data-theme="night"]{
+    background: #243f4d;
+}
+
+html[data-theme="day"] .settings__button{
+    color: #53a6cb;
+}
+
+html[data-theme="night"] .settings__button{
+    color: #243f4d;
+}
+
+html[data-theme="day"] .weather,
+.weather {
+    background: linear-gradient(360deg, #3594bf 0%, rgba(255, 255, 255, 0) 100%), #53a6cb;
+}
+
+html[data-theme="night"] .weather {
+    background: linear-gradient(360deg, #55707e 0%, rgba(255, 255, 255, 0) 100%), #042232;
+}
+
+.weather__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: $padding;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.navigation{
+    &__icon{
+        position: fixed;
+        z-index: 1;
+        top: 20px;
+        right: 20px;
+        max-width: 10%;
+    }
+    &__title{
+        text-align: center;
+        font-size: 2em;
+        margin: $padding;
+    }
+}
+
+.current {
+    text-align: center;
+    margin-bottom: $padding * 2;
+
+    &__city {
+        font-size: 3em;
+        margin-bottom: $padding / 4;
+    }
+
+    &__description {
+        font-size: 1.5em;
+        margin-bottom: $padding;
+    }
+
+    &__temperature {
+        font-size: 4em;
+        margin-bottom: $padding;
+    }
+
+    &__icon {
+        margin-top: $padding / 2;
+        margin-right: $padding;
+        margin-bottom: $padding;
+        width: $icon-size;
+        height: $icon-size;
+    }
+}
+
+.details {
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $padding * 2;
+    }
+
+    &__item {
+        flex: 1;
+    }
+
+    &__name {
+        margin-bottom: $padding;
+    }
+
+    &__value {
+        font-size: 1.5em;
+    }
+}
+
+.settings{
+    &__form{
+        display: flex;
+        justify-content: center;
+    }
+    &__input{
+        font-size: large;
+        background: transparent;
+        outline: none;
+        border: none;
+        padding: 5px;
+        border-bottom: 2px solid #fff;
+        min-width: 30vw;
+    }
+    &__button{
+        font-size: large;
+        background-color: #fff;
+        padding: 0 15px 0 15px;
+        border-radius: 0px;
+        margin-left: -5px;
+        outline: none;
+        cursor: pointer;
+        border-bottom: 2px solid #fff;
+        min-width: 10%;
+    }
+}
+
+.list{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        font-size: large;
+        padding: .5em;
+        border: 2px solid #fff;
+    }
+    
+    &__burger-button{
+        cursor: pointer;
+        margin-right: 1em;
+    }
+
+    &__burger,
+    &__burger::before,
+    &__burger::after {
+        display: block;
+        background-color: #fff;
+        margin-top: 7px;
+        height: 2px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    
+    &__burger::before {
+        content: '';
+        position: absolute;
+        margin-top: -6px;
+    }
+    
+    &__burger::after {
+        content: '';
+        position: absolute;
+        margin-top: 6px;
+    }
+
+    &__dismiss-button{
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+::placeholder{
+    color: #fff;
+}
+
+html.transition,
+html.transition * {
+    transition: all 2000ms !important;
+    transition-delay: 0 !important;
+}
+
+.icon__01d,
+.icon__01n,
+.icon__02d,
+.icon__02n,
+.icon__03d,
+.icon__03n,
+.icon__04d,
+.icon__04n,
+.icon__09d,
+.icon__09n,
+.icon__10d,
+.icon__10n,
+.icon__11n,
+.icon__11n,
+.icon__13d,
+.icon__13n,
+.icon__50d,
+.icon__50n {
+    background-size: $icon-size;
+    background-repeat: no-repeat;
+}
+
+.icon__01d,
+.icon__01n {
+    background-image: url("../images/01d.png");
+}
+
+.icon__02d,
+.icon__02n {
+    background-image: url("../images/02d.png");
+}
+
+.icon__03d,
+.icon__03n {
+    background-image: url("../images/03d.png");
+}
+
+.icon__04d,
+.icon__04n {
+    background-image: url("../images/04d.png");
+}
+
+.icon__09d,
+.icon__09n {
+    background-image: url("../images/09d.png");
+}
+
+.icon__10d,
+.icon__10n {
+    background-image: url("../images/10d.png");
+}
+
+.icon__11n,
+.icon__11n {
+    background-image: url("../images/11d.png");
+}
+
+.icon__13d,
+.icon__13n {
+    background-image: url("../images/13d.png");
+}
+
+.icon__50d,
+.icon__50n {
+    background-image: url("../images/50d.png");
+}
+
