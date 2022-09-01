@@ -62,10 +62,19 @@ export default {
     }
   },
    created() {
-    if (typeof(localStorage.getItem("cityArray")) != "undefined"){
+    if (localStorage.getItem("cityArray") === null){
+      this.$geolocation.getCurrentPosition()
+      .then(x => {
+        axios.get(`http://api.positionstack.com/v1/reverse?access_key=${key}&query=${x.coords.latitude},${x.coords.longitude}&limit=1`).then(res => 
+        this.cityArray.push({ id: id++, name: res.data.data[0].locality })
+        )
+      })
+    } else {
       if (localStorage.getItem("cityArray").length != 2){
-      this.cityArray = JSON.parse(localStorage.getItem("cityArray"))
+        this.cityArray = JSON.parse(localStorage.getItem("cityArray"))
+        console.log("Load")
       } else {
+        console.log("Loading...")
         this.$geolocation.getCurrentPosition()
         .then(x => {
           axios.get(`http://api.positionstack.com/v1/reverse?access_key=${key}&query=${x.coords.latitude},${x.coords.longitude}&limit=1`).then(res => 
@@ -78,9 +87,7 @@ export default {
         });
       localStorage.setItem("cityArray", JSON.stringify(cityArray))
       }
-    } else {
-      this.cityArray.push({ id: id++, name: "Moscow" })
-      window.alert("You don't trust geolocation to browser");
+    
     }
     
     },
