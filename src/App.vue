@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="vidget-container">
     <img v-if="isInSettings" src="./components/icons/back.png" alt="Settings" class="navigation__icon"
       @click="toggleNav" />
     <img v-else src="./components/icons/settings.png" alt="Settings" class="navigation__icon" @click="toggleNav" />

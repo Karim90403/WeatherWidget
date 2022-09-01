@@ -17,11 +17,19 @@ html {
     width: 100%;
 }
 
-html[data-theme="day"]{
+.vidget-container{
+    position: relative;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    width: 350px; 
+    height: 450px;
+}
+
+html[data-theme="day"] .vidget-container{
     background: #53a6cb;
 }
 
-html[data-theme="night"]{
+html[data-theme="night"] .vidget-container{
     background: #243f4d;
 }
 
@@ -69,7 +77,7 @@ html[data-theme="night"] .weather {
 }
 
 .current {
-    text-align: center;
+    text-align: left;
     margin-bottom: $padding * 2;
 
     &__city {
@@ -128,7 +136,7 @@ html[data-theme="night"] .weather {
         border: none;
         padding: 5px;
         border-bottom: 2px solid #fff;
-        min-width: 30vw;
+        
     }
     &__button{
         font-size: large;

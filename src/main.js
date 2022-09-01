@@ -9,7 +9,7 @@ import VueCustomElement from 'vue-custom-element';
  
 Vue.use(VueCustomElement)
 Vue.use(VueGeolocationApi)
-Vue.customElement('vue-widget', App)
+Vue.customElement('weather-widget', App)
 // new Vue({
 //     render: h => h(App)
 // })
